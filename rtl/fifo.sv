@@ -1,4 +1,5 @@
-`timescale 1ns/1ps
+`timescale 1us/1ns
+
 module fifo(
 	input logic clk,
 	input logic rst,
@@ -22,20 +23,20 @@ always_ff @(posedge clk) begin
 		wr_ptr   <= 0;
 		rd_ptr   <= 0;
 		count    <= 0;
-		data_out <= 0;	
+		data_out <= 8'd0;	
 		
-		for (i= 0; i<8 ; i++)
+		for (i= 0; i<7 ; i++)
 			memory[i] <= 0;
 	end
 	
 	else begin
-		if (wr_en && count<8) begin
+		if (wr_en && count<4'd8) begin
 			memory[wr_ptr] <= data_in;
 			wr_ptr <= wr_ptr + 1;
 			count <= count +1;
 		end 
 	
-		if (rd_en && count>0) begin
+		if (rd_en && count>4'd0) begin
 			data_out <= memory[rd_ptr];
 			rd_ptr <= rd_ptr + 1;
 			count <= count -1;
@@ -44,7 +45,7 @@ always_ff @(posedge clk) begin
 	end	
 end
 
-assign empty = (count == 0);
-assign full  = (count == 8);
+assign full  = (count == 4'd8);
+assign empty = (count == 4'd0);
 
 endmodule

@@ -1,4 +1,5 @@
-`timescale 1ns/1ps
+`timescale 1us/1ns
+
 // Module Interface
 module uart_tx(
 	input logic  clk,rst,
@@ -11,7 +12,7 @@ module uart_tx(
 // Internal Signals
 	logic [7:0] tx_shift_reg;
 	logic [3:0] bit_count;
-	logic [15:0] baud_counter;
+	logic [3:0] baud_counter;
 	logic baud_tick;
 
 // FSM States
@@ -27,7 +28,7 @@ typedef enum logic [1:0]  {
 			baud_tick    <= 0;
 		end 
 		else begin
-			if (baud_counter == 434) begin
+			if (baud_counter == 3) begin
 				baud_counter <= 0;
 				baud_tick    <= 1;
 			end 
@@ -54,7 +55,7 @@ typedef enum logic [1:0]  {
 		
 		case (state)
 			IDLE : begin
-				if (tx_start)
+				if (tx_start && baud_tick)
 					next_state = START;
 				end
 			
@@ -86,7 +87,7 @@ typedef enum logic [1:0]  {
 			case (state) 
 				IDLE: begin
 					bit_count <= 0;
-					if (tx_start) 
+					if (tx_start && baud_tick) 
 						tx_shift_reg <= data_in;
 				end
 				
