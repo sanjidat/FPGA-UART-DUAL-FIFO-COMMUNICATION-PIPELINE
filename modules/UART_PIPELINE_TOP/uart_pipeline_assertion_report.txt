@@ -1,0 +1,32 @@
+# UART PIPELINE TEST START
+# [1070000]  PASS: Received 00
+# [2030000]  PASS: Received ff
+# [2990000]  PASS: Received aa
+# [3950000]  PASS: Received 55
+# [4910000]  PASS: Received 41
+# [5870000]  PASS: Received e7
+# [6830000]  PASS: Received 7c
+# [7790000]  PASS: Received 9c
+# [8750000]  PASS: Received 1c
+# [9710000]  PASS: Received e8
+# [10670000]  PASS: Received a7
+# [11630000]  PASS: Received 16
+# [12590000]  PASS: Received c4
+# [13550000]  PASS: Received 00
+# [14510000]  PASS: Received 59
+# [15470000]  PASS: Received f8
+# [16430000]  PASS: Received fb
+# [17390000]  PASS: Received 11
+# [18350000]  PASS: Received a2
+# [19310000]  PASS: Received fc
+# [20270000]  PASS: Received a5
+# [21230000]  PASS: Received de
+# [22190000]  PASS: Received 96
+# [23150000]  PASS: Received 90
+# [24110000]  PASS: Received 17
+# -------------------------------
+# PASS COUNT = 25
+# FAIL COUNT = 0
+# -------------------------------
+# ** Note: $finish    : uart_pipeline_top_tb.sv(195)
+#    Time: 25110 ns  Iteration: 0  Instance: /uart_pipeline_top_tb
