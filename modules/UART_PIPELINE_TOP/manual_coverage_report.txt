@@ -1,0 +1,15 @@
+# ASSERTION PASS: ALL PULSE WIDTH CHECKS PASSED
+# ==================================
+# FUNCTIONAL COVERAGE REPORT
+# 0X00  	   : 2
+# 0XFF  	   : 1
+# 0XAA  	   : 1
+# 0X55  	   : 1
+# LOW COUNT  : 4
+# MID COUNT  : 3
+# HIGH COUNT : 13
+# BINS HIT   : 7 / 7
+# COVERAGE   : 100.0%
+# ==================================
+# End time: 17:05:55 on Jul 23,2026, Elapsed time: 0:00:28
+# Errors: 0, Warnings: 2
