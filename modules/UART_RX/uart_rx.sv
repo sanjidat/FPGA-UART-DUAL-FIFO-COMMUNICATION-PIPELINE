@@ -30,7 +30,7 @@ typedef enum logic [2:0] {
 	
 	state_t state, next_state;
 	
-/*/ Baud Generator
+// Baud Generator
  
 	always_ff @(posedge clk) begin
 	
@@ -52,53 +52,8 @@ typedef enum logic [2:0] {
 			end
 			
 		end
-	end*/
+	end
 	
-// Baud Generator
-always_ff @(posedge clk) begin
-
-    if (rst) begin
-        baud_counter <= 0;
-        baud_tick    <= 0;
-    end
-
-    else begin
-        // Default: baud_tick is only one clock cycle
-        baud_tick <= 0;
-
-        case (state)
-
-            IDLE: begin
-                // Keep timing reset while waiting for a start bit
-                baud_counter <= 0;
-            end
-
-            START: begin
-                // Wait half a bit period so that the start bit
-                // is checked near its center
-                if (baud_counter == (CLKS_PER_BIT / 2) - 1) begin
-                    baud_counter <= 0;
-                    baud_tick    <= 1;
-                end
-                else begin
-                    baud_counter <= baud_counter + 1;
-                end
-            end
-
-            default: begin
-                // DATA and STOP use one complete bit period
-                if (baud_counter == CLKS_PER_BIT - 1) begin
-                    baud_counter <= 0;
-                    baud_tick    <= 1;
-                end
-                else begin
-                    baud_counter <= baud_counter + 1;
-                end
-            end
-
-        endcase
-    end
-end
 
 // FSM State Register
 
@@ -112,7 +67,7 @@ end
 		end
 	end
 
-/*/ Next State Logic (FSM Brain)
+// Next State Logic (FSM Brain)
 
 	always_comb begin	
 	
@@ -145,54 +100,14 @@ end
 			end
 		
 			DONE: begin 
-				//if (baud_tick) begin
+				if (baud_tick) begin
 					next_state = IDLE;
-				//end
+				end
 			end
 		endcase 
 	
-	end*/
+	end
 	
-	always_comb begin
-
-    next_state = state;
-
-    case (state)
-
-        IDLE: begin
-            if (!serial_rx_in)
-                next_state = START;
-        end
-
-        START: begin
-            if (baud_tick) begin
-                if (!serial_rx_in)
-                    next_state = DATA;
-                else
-                    next_state = IDLE;
-            end
-        end
-
-        DATA: begin
-            if (baud_tick && bit_count == 7)
-                next_state = STOP;
-        end
-
-        STOP: begin
-            if (baud_tick)
-                next_state = DONE;
-        end
-
-        DONE: begin
-            next_state = IDLE;
-        end
-
-        default: begin
-            next_state = IDLE;
-        end
-
-    endcase
-end
 
 // Datapath (Shift Register + Counter)
 
@@ -201,7 +116,7 @@ end
 			if (rst) begin
 			
 				rx_shift_reg <= 8'd0;
-				bit_count    <= 0;
+				bit_count    <= 4'd0;
 				
 			end
 			
@@ -213,7 +128,7 @@ end
 						
 						if(!serial_rx_in) begin
 						
-							bit_count <= 0;
+							bit_count <= 4'd0;
 						end
 						
 					end
@@ -223,8 +138,9 @@ end
 						if (baud_tick) begin
 							rx_shift_reg <= {serial_rx_in, rx_shift_reg[7:1]};
 							//rx_shift_reg <= {rx_shift_reg[6:0],serial_rx_in};
-							if (bit_count < 7)
+							if (bit_count < 7) begin
 								bit_count <= bit_count +1;
+							end
 								
 						end
 					end
