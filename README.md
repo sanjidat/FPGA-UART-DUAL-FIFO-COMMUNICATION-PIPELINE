@@ -58,7 +58,7 @@ The design operates from the DE10-Lite’s **50 MHz system clock** and supports 
 
 ## System Architecture
 
-![FPGA UART pipeline architecture](docs/architecture.png)
+![FPGA UART pipeline architecture](images/FPGA_UART_pipeline_architecture.png)
 
 The complete data path is:
 
@@ -492,13 +492,56 @@ The generated FPGA programming file is included in the `hardware/` directory for
 ```text
 fpga-uart-dual-fifo-communication-pipeline/
 │
-├── README.md
-├── LICENSE
-├── .gitignore
-│
 ├── constraints/
-│   ├── uart_pipeline.sdc
-│   └── DE10_Lite.qsf
+│   ├── DE10_LITE.qsf
+│   ├── DE10_LITE.sdc
+│   └── fpga_uart_pipeline.qsf
+│
+├── hardware/
+│   └── fpga_uart_pipeline.sof
+│
+images/
+│   ├── Waveforms/
+│   │   ├── fifo_waveform.png
+│   │   ├── uart_pipeline_top.png
+│   │   ├── uart_rx_waveform.png
+│   │   └── uart_tx_waveform.png
+│
+│   ├── de10_lite_board/
+│   │   ├── data_in=00000000.png
+│   │   ├── data_in=01000001.png
+│   │   ├── data_in=01010101.png
+│   │   ├── data_in=10101010.png
+│   │   ├── data_in=11111111.png
+│   │   └── reset=1.png
+│
+├── modules/
+│   ├── UART_TX/
+│   │   ├── uart_tx.sv
+│   │   ├── uart_tx_tb.sv
+│   │   └── uart_tx_waveform.png
+│   │
+│   ├── UART_RX/
+│   │   ├── uart_rx.sv
+│   │   ├── uart_rx_tb.sv
+│   │   └── uart_rx_waveform.png
+│   │
+│   ├── FIFO/
+│   │   ├── fifo.sv
+│   │   ├── fifo_tb.sv
+│   │   └── fifo_waveform.png
+│   │
+│   └── UART_PIPELINE_TOP/
+│       ├── UART_Pipeline_Assertion_Report.txt
+│       ├── manual_coverage_report.txt
+│       ├── uart_pipeline_simulation_report.txt
+│       ├── uart_pipeline_top.png
+│       ├── uart_pipeline_top.sv
+│       └── uart_pipeline_top_tb.sv
+│
+├── quartus_project/
+│   ├── DE10_LITE.qsf
+│   └── fpga_uart_pipeline.qpf
 │
 ├── rtl/
 │   ├── uart_tx.sv
@@ -506,7 +549,14 @@ fpga-uart-dual-fifo-communication-pipeline/
 │   ├── fifo.sv
 │   ├── uart_pipeline_top.sv
 │   └── uart_pipeline_de10_lite.sv
-│
+│ 
+├── scripts/
+│   ├── run_uart_tx.do
+│   ├── run_uart_rx.do
+│   ├── run_fifo.do
+│   ├── run_uart.do
+│   └── pipe_run_uart.do
+│ 
 ├── tb/
 │   ├── uart_tx_tb.sv
 │   ├── uart_rx_tb.sv
@@ -515,43 +565,15 @@ fpga-uart-dual-fifo-communication-pipeline/
 │   ├── uart_pipeline_assertions.sv
 │   └── uart_pipeline_coverage.sv
 │
-├── scripts/
-│   ├── run_uart_tx.do
-│   ├── run_uart_rx.do
-│   ├── run_fifo.do
-│   └── run_uart_pipeline.do
-│
-├── modules/
-│   ├── uart_tx/
-│   │   ├── README.md
-│   │   ├── waveform.png
-│   │   └── fsm.png
-│   │
-│   ├── uart_rx/
-│   │   ├── README.md
-│   │   ├── waveform.png
-│   │   └── fsm.png
-│   │
-│   ├── fifo/
-│   │   ├── README.md
-│   │   └── waveform.png
-│   │
-│   └── pipeline/
-│       ├── README.md
-│       ├── waveform.png
-│       ├── assertion_report.txt
-│       └── manual_coverage_report.txt
-│
-├── hardware/
-│   ├── de10_lite_board.jpg
-│   └── uart_pipeline.sof
-│
 ├── docs/
 │   ├── architecture.png
 │   └── timing_summary.png
 │
-└── images/
-    └── pipeline_block_diagram.png
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+└── 
 ```
 
 ---
