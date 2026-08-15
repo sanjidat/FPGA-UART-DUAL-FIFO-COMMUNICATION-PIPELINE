@@ -132,9 +132,9 @@ Main responsibilities:
 * Providing transmitter busy status.
 * Generating baud timing from `CLKS_PER_BIT`.
 
-![UART TX FSM](modules/uart_tx/fsm.png)
+![UART TX FSM](docs/UART_TX_FSM.png)
 
-![UART TX waveform](modules/uart_tx/waveform.png)
+![UART TX waveform](images/Waveforms/uart_tx_waveform.png)
 
 ---
 
@@ -159,9 +159,9 @@ Main responsibilities:
 * Stop-state handling.
 * One-cycle receive-complete pulse generation.
 
-![UART RX FSM](modules/uart_rx/fsm.png)
+![UART RX FSM](docs/UART_RX_FSM.png)
 
-![UART RX waveform](modules/uart_rx/waveform.png)
+![UART RX waveform](images/Waveforms/uart_rx_waveform.png)
 
 ---
 
