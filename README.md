@@ -60,34 +60,12 @@ The design operates from the DE10-Lite’s **50 MHz system clock** and supports 
 
 ![FPGA UART pipeline architecture](docs/fpga_uart_pipeline_architecture.png)
 
+## Datapath
 The complete data path is:
 
 ```text
-DE10-Lite SW[7:0]
-        │
-        ▼
-  +-------------+
-  |   TX FIFO   |
-  +-------------+
-        │
-        ▼
-  +-------------+
-  |   UART TX   |
-  +-------------+
-        │
-        │ Serial loopback
-        ▼
-  +-------------+
-  |   UART RX   |
-  +-------------+
-        │
-        ▼
-  +-------------+
-  |   RX FIFO   |
-  +-------------+
-        │
-        ▼
-DE10-Lite LEDR[7:0]
+![FPGA UART pipeline architecture](docs/UART_Datapath.png)
+
 ```
 
 ### Data-flow sequence
