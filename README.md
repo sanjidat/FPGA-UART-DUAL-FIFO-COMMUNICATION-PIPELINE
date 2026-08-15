@@ -193,7 +193,7 @@ The module-level FIFO testbench verifies:
 * Empty-flag behavior.
 * Simultaneous read/write behavior.
 
-![FIFO waveform](modules/fifo/waveform.png)
+![FIFO waveform](images/Waveforms/fifo_waveform.png)
 
 ---
 
@@ -228,7 +228,7 @@ WAIT_RX → READ_RX → WAIT_RX
 * `WAIT_RX`: Wait until the RX FIFO contains a received byte.
 * `READ_RX`: Read the received byte and update the pipeline output.
 
-![Complete pipeline waveform](modules/pipeline/waveform.png)
+![Complete pipeline waveform](images/Waveforms/uart_pipeline_top.png)
 
 ---
 
