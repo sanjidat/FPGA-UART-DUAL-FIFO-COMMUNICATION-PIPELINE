@@ -58,7 +58,7 @@ The design operates from the DE10-Lite’s **50 MHz system clock** and supports 
 
 ## System Architecture
 
-![FPGA UART pipeline architecture](docs/uart_pipeline_architecture.jpg)
+![FPGA UART pipeline architecture](docs/fpga_uart_pipeline_architecture.png)
 
 The complete data path is:
 
