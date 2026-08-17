@@ -421,9 +421,8 @@ TimeQuest analysis confirmed that the design meets the 50 MHz clock requirement.
 
 Positive setup and hold slack confirm that the internal synchronous paths satisfy the required timing constraints.
 
-
-[View Timing analysis summary_Hold](reports/timing_report/fpga_uart_pipeline-Multi Corner Summary (3-3 corners)_Hold.txt)
-[View Timing analysis summary_Setup](reports/timing_report/fpga_uart_pipeline-Multi Corner Summary (3-3 corners)_Setup.txt)
+[View Timing analysis summary Hold](reports/timing_report/fpga_uart_pipeline_Multi_Corner_Summary_Hold.txt)
+[View Timing analysis summary Setup](reports/timing_report/fpga_uart_pipeline_Multi_Corner_Summary_Setup.txt)
 
 ---
 
