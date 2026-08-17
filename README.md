@@ -460,7 +460,7 @@ Switches
    → LEDs
 ```
 
-![DE10-Lite hardware validation](hardware/de10_lite_board.jpg)
+![DE10-Lite hardware validation](images/DE10_LITE_BOARD)
 
 The generated FPGA programming file is included in the `hardware/` directory for use with the same DE10-Lite hardware configuration.
 
