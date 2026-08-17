@@ -388,7 +388,7 @@ The complete report is available here:
 The design includes an SDC timing-constraint file:
 
 ```text
-constraints/uart_pipeline.sdc
+constraints/DE10_LITE.sdc
 ```
 
 The primary clock constraint is:
