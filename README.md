@@ -49,8 +49,8 @@ The design targets the Terasic DE10-Lite and operates from its **50 MHz system c
 * Added randomized byte testing to exercise low-, mid-, and high-value data ranges.
 * Achieved complete TimeQuest timing closure:
 
-  * Worst-case setup slack: **+14.621 ns**
-  * Worst-case hold slack: **+0.347 ns**
+  * Worst-case setup slack: **+17.904 ns**
+  * Worst-case hold slack: **+0.152 ns**
   * Timing violations: **0**
 * Successfully validated the full pipeline on an **Intel MAX 10 FPGA** using DE10-Lite switches, pushbutton input, and LEDs.
 
