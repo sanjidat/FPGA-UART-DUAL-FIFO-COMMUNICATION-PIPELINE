@@ -348,7 +348,7 @@ ASSERTION PASS: ALL PULSE WIDTH CHECKS PASSED
 
 The complete assertion report is available here:
 
-[View assertion report](modules/pipeline/assertion_report.txt)
+[View assertion report](docs/UART_Pipeline_Assertion_Report.txt)
 
 ---
 
@@ -379,7 +379,7 @@ This value represents **100% of the explicitly defined manual functional coverag
 
 The complete report is available here:
 
-[View manual coverage report](modules/pipeline/manual_coverage_report.txt)
+[View manual coverage report](docs/manual_coverage_report.txt)
 
 ---
 
