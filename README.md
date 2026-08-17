@@ -478,81 +478,94 @@ fpga-uart-dual-fifo-communication-pipeline/
 │   ├── DE10_LITE.sdc
 │   └── fpga_uart_pipeline.qsf
 │
+├── docs/
+│   ├── UART_Datapath.png
+│   ├── UART_RX_FSM.png
+│   ├── UART_TX_FSM.png
+│   ├── assertion_report.png
+│   ├── coverage_report.png
+│   └── fpga_uart_pipeline_architecture.png
+│
 ├── hardware/
 │   └── fpga_uart_pipeline.sof
 │
 images/
-│   ├── Waveforms/
+│   ├── DE10_LITE_BOARD/
+│   │   ├── data_in=0X00.JPG
+│   │   ├── data_in=0X41.JPG
+│   │   ├── data_in=0X55.JPG
+│   │   ├── data_in=0XAA.JPG
+│   │   ├── data_in=0XFF.JPG
+│   │   └── reset=1.JPG
+│
+│   └── Waveforms/
 │   │   ├── fifo_waveform.png
 │   │   ├── uart_pipeline_top.png
 │   │   ├── uart_rx_waveform.png
 │   │   └── uart_tx_waveform.png
 │
-│   ├── de10_lite_board/
-│   │   ├── data_in=00000000.png
-│   │   ├── data_in=01000001.png
-│   │   ├── data_in=01010101.png
-│   │   ├── data_in=10101010.png
-│   │   ├── data_in=11111111.png
-│   │   └── reset=1.png
-│
 ├── modules/
-│   ├── UART_TX/
-│   │   ├── uart_tx.sv
-│   │   ├── uart_tx_tb.sv
-│   │   └── uart_tx_waveform.png
-│   │
-│   ├── UART_RX/
-│   │   ├── uart_rx.sv
-│   │   ├── uart_rx_tb.sv
-│   │   └── uart_rx_waveform.png
-│   │
 │   ├── FIFO/
 │   │   ├── fifo.sv
 │   │   ├── fifo_tb.sv
 │   │   └── fifo_waveform.png
 │   │
-│   └── UART_PIPELINE_TOP/
-│       ├── UART_Pipeline_Assertion_Report.txt
-│       ├── manual_coverage_report.txt
-│       ├── uart_pipeline_simulation_report.txt
-│       ├── uart_pipeline_top.png
-│       ├── uart_pipeline_top.sv
-│       └── uart_pipeline_top_tb.sv
-│
+│   ├── UART_PIPELINE_TOP/
+│   │   ├── UART_Pipeline_Assertion_Report.txt
+│   │   ├── manual_coverage_report.txt
+│   │   ├── uart_pipeline_simulation_report.txt
+│   │   ├── uart_pipeline_top.png
+│   │   ├── uart_pipeline_top.sv
+│   │   └── uart_pipeline_top_tb.sv
+│   │
+│   ├── UART_TX/
+│   │   ├── uart_tx.sv
+│   │   ├── uart_tx_tb.sv
+│   │   └── uart_tx_waveform.png
+│   │
+│   └── UART_RX/
+│   │   ├── uart_rx.sv
+│   │   ├── uart_rx_tb.sv
+│   │   └── uart_rx_waveform.png
+│   │
 ├── quartus_project/
 │   ├── DE10_LITE.qsf
 │   └── fpga_uart_pipeline.qpf
-│
+│   │
+├── reports/
+│   ├── assertion_report/
+│   │   └── UART_Pipeline_Assertion_Report.txt
+│   │
+│   ├── manual_coverage_report/
+│   │   └── manual_coverage_reoprt.txt
+│   │
+│   ├── timing_report/
+│   │   ├── fpga_uart_pipeline_Multi_Corner_Summary_Hold.txt
+│   │   └── fpga_uart_pipeline_Multi_Corner_Summary_Setup.txt
+│   │
 ├── rtl/
-│   ├── uart_tx.sv
-│   ├── uart_rx.sv
 │   ├── fifo.sv
+│   ├── uart_pipeline_de10_lite.sv
 │   ├── uart_pipeline_top.sv
-│   └── uart_pipeline_de10_lite.sv
+│   ├── uart_rx.sv
+│   └── uart_tx.sv
 │ 
 ├── scripts/
-│   ├── run_uart_tx.do
-│   ├── run_uart_rx.do
-│   ├── run_fifo.do
+│   ├── pipe_run_uart.do
+│   ├── run_fifo.do 
 │   ├── run_uart.do
-│   └── pipe_run_uart.do
+│   ├── run_uart_rx.do
+│   └── run_uart_tx.do
 │ 
 ├── tb/
-│   ├── uart_tx_tb.sv
-│   ├── uart_rx_tb.sv
-│   ├── fifo_tb.sv
+│   ├── fifo_tb.sv 
+│   ├── uart_pipeline_assertions.sv 
+│   ├── uart_pipeline_coverage.sv 
 │   ├── uart_pipeline_top_tb.sv
-│   ├── uart_pipeline_assertions.sv
-│   └── uart_pipeline_coverage.sv
-│
-├── docs/
-│   ├── architecture.png
-│   └── timing_summary.png
+│   ├── uart_rx_tb.sv
+│   └── uart_tx_tb.sv
 │
 ├── README.md
-├── LICENSE
-├── .gitignore
 │
 └── 
 ```
