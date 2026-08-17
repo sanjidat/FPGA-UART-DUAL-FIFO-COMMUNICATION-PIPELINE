@@ -10,7 +10,7 @@ The system uses separate transmit and receive FIFOs to buffer data around the UA
 
 This project implements an end-to-end FPGA UART data path using a modular dual-FIFO architecture. It integrates a UART transmitter, UART receiver, two synchronous FIFOs, pipeline control state machines, a board-level wrapper, individual module testbenches, assertion-based verification, manual functional coverage, timing constraints, and physical FPGA validation.
 
-The design operates from the DE10-Lite’s **50 MHz system clock** and supports **115200-baud, 8-N-1 UART communication**. Timing closure was achieved with **+14.621 ns worst-case setup slack**, **+0.347 ns worst-case hold slack**, and **zero reported setup or hold violations**.
+The design targets the Terasic DE10-Lite and operates from its **50 MHz system clock**, supporting **115200-baud, 8-N-1 UART communication**. Post-fit static timing analysis using Intel TimeQuest achieved timing closure across 3/3 analyzed PVT corners, with a **+17.904 ns worst-case setup slack, +0.152 ns worst-case hold slack, and 0.000 ns total negative slack for both setup and hold analysis**.
 
 ---
 
