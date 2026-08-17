@@ -412,8 +412,8 @@ TimeQuest analysis confirmed that the design meets the 50 MHz clock requirement.
 | ----------------------- | ----------------: |
 | Clock frequency         |            50 MHz |
 | Clock period            |         20.000 ns |
-| Worst-case setup slack  |    **+14.621 ns** |
-| Worst-case hold slack   |     **+0.347 ns** |
+| Worst-case setup slack  |    **+17.904 ns** |
+| Worst-case hold slack   |     **+0.152 ns** |
 | Setup violations        |             **0** |
 | Hold violations         |             **0** |
 | Setup constraint status | Fully constrained |
@@ -421,7 +421,8 @@ TimeQuest analysis confirmed that the design meets the 50 MHz clock requirement.
 
 Positive setup and hold slack confirm that the internal synchronous paths satisfy the required timing constraints.
 
-![Timing analysis summary](docs/timing_summary.png)
+![Timing analysis summary_Hold](reports/timing/fpga_uart_pipeline-Multi Corner Summary (3-3 corners)_Hold.txt)
+![Timing analysis summary_Setup](reports/timing/fpga_uart_pipeline-Multi Corner Summary (3-3 corners)_Setup.txt)
 
 ---
 
