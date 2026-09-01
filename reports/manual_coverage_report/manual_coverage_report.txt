@@ -11,5 +11,3 @@
 # BINS HIT   : 7 / 7
 # COVERAGE   : 100.0%
 # ==================================
-# End time: 17:05:55 on Jul 23,2026, Elapsed time: 0:00:28
-# Errors: 0, Warnings: 2
